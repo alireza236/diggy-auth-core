@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "clean": "rimraf dist",
-    "dev:build": "webpack -w",
-    "dev": "cross-env NODE_ENV=development nodemon dist/index.bundle.js"
+    "dev:build": "npm run clean && webpack -w",
+    "dev": "cross-env NODE_ENV=development nodemon dist/index.bundle.js",
+    "serve": "set DEBUG=* & npm run dev"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "dependencies": {
     "@babel/runtime": "^7.0.0",
     "@babel/runtime-corejs2": "^7.0.0",
+    "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "cookie-parser": "^1.4.3",
     "cross-env": "^5.2.0",
@@ -31,6 +33,7 @@
     "express-validator": "^5.3.0",
     "helmet": "^3.13.0",
     "http-errors": "^1.7.1",
+    "http-status": "^1.2.0",
     "mocha": "^5.2.0",
     "mongoose": "^5.2.16",
     "morgan": "^1.9.1",
@@ -48,6 +51,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "babel-loader": "^8.0.2",
+    "should": "^13.2.3",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-node-externals": "^1.7.2"

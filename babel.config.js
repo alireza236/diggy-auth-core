@@ -4,7 +4,7 @@ api.cache(true);
   const plugins = [
            ["@babel/plugin-proposal-object-rest-spread"],
            ["@babel/plugin-transform-runtime"]
-        ]  
+        ];  
 
   return {
     presets,

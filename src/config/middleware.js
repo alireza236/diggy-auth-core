@@ -1,4 +1,5 @@
  import express from 'express';
+ import bodyParser from 'body-parser';
  import morgan from 'morgan';
  import compression from 'compression';
  import helmet from 'helmet';
@@ -13,9 +14,9 @@
          app.use(helmet());
      }
      
-     app.use(express.json());
+     app.use(bodyParser.json());
  
-     app.use(express.urlencoded({
+     app.use(bodyParser.urlencoded({
          extended: true
      }));
 
